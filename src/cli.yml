@@ -1,0 +1,45 @@
+name: MpegTS Streamer
+version: "1.0"
+author: Marc-Antoine Arnaud <arnaud.marcantoine@gmail.com>
+args:
+    - port:
+        short: p
+        long: port
+        takes_value: true
+        default_value: "1234"
+        help: Configure the output port
+    - host:
+        short: h
+        long: host
+        takes_value: true
+        default_value: 192.168.1.209
+        help: Configure the output host
+    - server-ip:
+        long: server-ip
+        takes_value: true
+        default_value: 192.168.1.150
+        help: Configure the server ip top open the socket
+    - server-port:
+        long: server-port
+        takes_value: true
+        default_value: "34254"
+        help: Configure the server port top open the socket
+    - loop:
+        short: l
+        long: long
+        help: Infinit loop, repeat file(s) anytimes
+    - bitrate:
+        short: b
+        long: bitrate
+        takes_value: true
+        required: true
+        default_value: "24880000"
+        help: Set the MpegTS bitrate
+    - file:
+        short: f
+        long: file
+        value_name: FILE
+        takes_value: true
+        help: MpegTS source file
+        required: true
+        multiple: true
