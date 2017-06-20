@@ -23,7 +23,7 @@ fn main() {
   let source_file = matches.value_of("file").unwrap();
   
   let loop_enabled = matches.is_present("loop");
-  let bitrate = matches.value_of("bitrate").unwrap().parse::<u64>().expect("unable to parse MpegTS bitrate");;
+  let bitrate = value_t!(matches.value_of("bitrate"), u64).expect("unable to parse MpegTS bitrate");
 
   println!("From    : {}:{}", server_ip, server_port);
   println!("To      : {}:{}", host, port);
